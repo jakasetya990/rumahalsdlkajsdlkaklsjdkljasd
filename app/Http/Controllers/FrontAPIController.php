@@ -11,9 +11,11 @@ class FrontAPIController extends Controller
 {
     public function apkInfo($packageName)
     {
-        $data =  Cache::remember('apkinfo-' . $packageName, 300, function () use ($packageName) {
-            return ApkList::where('apk_package', $packageName)->first();
-        });
+        // $data =  Cache::remember('apkinfo-' . $packageName, 300, function () use ($packageName) {
+        //     return ApkList::where('apk_package', $packageName)->first();
+        // });
+
+        $data = ApkList::where('apk_package', $packageName)->first();
         if ($data !== null) {
             return response([
                 'success' => true,

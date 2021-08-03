@@ -26,13 +26,13 @@
                 value="{{ isset($data->apk_package) ? $data->apk_package : '' }}" required>
             </div>
             <div class="form-group">
-              <label for="apk_status">APK Status</label>
+              <label for="apk_status">APK Status </label>
               <select class="form-control" name="apk_status" id="apk_status">
-                <option value="banned"
-                  {{ isset($data->apk_status) && $data->apk_status === 'banned' ? 'selected' : '' }}>Banned
+                <option value="0" {{ isset($data->apk_status) && $data->apk_status === 0 ? 'selected' : '' }}>
+                  Banned
                 </option>
-                <option value="active"
-                  {{ isset($data->apk_status) && $data->apk_status === 'active' ? 'selected' : '' }}>Active</option>
+                <option value="1" {{ isset($data->apk_status) && $data->apk_status === 1 ? 'selected' : '' }}>
+                  Active</option>
               </select>
 
             </div>
@@ -53,8 +53,8 @@
           </div>
           <div class="card-body">
             <div class="form-group">
-              <label for="notice_status">Notice Status</label><select class="form-control" name="apk_status"
-                id="apk_status">
+              <label for="notice_status">Notice Status</label><select class="form-control" name="notice_status"
+                id="notice_status">
                 <option value="0" {{ isset($data->notice_status) && $data->notice_status === 0 ? 'selected' : '' }}>
                   BANNED
                 </option>
@@ -156,7 +156,7 @@
                   {{ isset($data->button_detail_status) && $data->button_detail_status === 1 ? 'selected' : '' }}>
                   ENABLED
                 </option>
-                <option value="10"
+                <option value="0"
                   {{ isset($data->button_detail_status) && $data->button_detail_status === 0 ? 'selected' : '' }}>
                   DISABLED</option>
               </select>

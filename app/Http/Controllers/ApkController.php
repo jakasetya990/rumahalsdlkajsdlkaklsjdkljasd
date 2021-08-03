@@ -22,6 +22,7 @@ class ApkController extends Controller
     }
     public function doEdit($id, Request $request)
     {
+        // return $request;
         $data = ApkList::find($id);
         $data->update($request->except('_token', 'id'));
         try {
